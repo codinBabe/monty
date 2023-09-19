@@ -1,9 +1,12 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#define _GNU_SOURCE
+
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <string.h>
+#include <stddef.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -34,5 +37,41 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/**
+ * struct montyCmd_s - monty command
+ * @file: file descriptor
+ * @line: line
+ */
+
+typedef struct montyCmd_s
+{
+	FILE *file;
+	char *line;
+} montyCmd_t;
+
+extern int vals;
+extern montyCmd_t montyCmd;
+
+stack_t *create_node(int n);
+void push(stack_t **head, unsigned int line_num);
+void pall(stack_t **head, unsigned int line_num);
+void pint (stack_t **head, unsigned int line_num);
+void pop(stack_t **head, unsigned int line_num);
+void nop(stack_t **head, unsigned int line_num);
+void swap(stack_t **head, unsigned int line_num);
+void add(stack_t **head, unsigned int line_num);
+
+void free_stack(stack_t *head);
+void close_stack(stack_t **head);
+
+void exec_instr(char *arg);
+int get_opcode(stack_t **head, char *args, char *val, int line_num);
+int _isdigit(char *s);
+void u_err(void);
+void o_err(char *file);
+void p_err(FILE *file, char *line, stack_t *head, int line_num);
+void inst_err(FILE *file, char *line, stack_t *head, char *val, int
+ line_num);
 
 #endif
