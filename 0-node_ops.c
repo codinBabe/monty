@@ -2,6 +2,9 @@
 
 int vals;
 /**
+ * create_node - function that create node
+ * @n:data to store
+ * Return:new_node
  */
 stack_t *create_node(int n)
 {
@@ -19,6 +22,9 @@ stack_t *create_node(int n)
 }
 
 /**
+ * push - function that push value onto the stack
+ * @head:head stack
+ * @line_num:line number
  */
 void push(stack_t **head, unsigned int line_num)
 {
@@ -33,6 +39,9 @@ void push(stack_t **head, unsigned int line_num)
 }
 
 /**
+ * pall - function to print all values in the stack
+ * @head: head stack
+ * @line_num:line number
  */
 void pall(stack_t **head, unsigned int line_num)
 {
@@ -48,6 +57,9 @@ void pall(stack_t **head, unsigned int line_num)
 }
 
 /**
+ * pint - function that print the top value of the stack
+ * @head: head stack
+ * @line_num: line number
  */
 void pint (stack_t **head, unsigned int line_num)
 {
@@ -62,12 +74,15 @@ void pint (stack_t **head, unsigned int line_num)
 }
 
 /**
+ * pop - function that pop a value from the stack
+ * @head:head stack
+ * @line_num: line number
  */
 void pop(stack_t **head, unsigned int line_num)
 {
 	stack_t *temp;
 
-	if(!*head)
+	if (!*head)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_num);
 		free_stack(*head);

@@ -1,6 +1,9 @@
 #include "monty.h"
 
 /**
+ * nop - function for the nop opcode
+ * @head: head stack
+ * @line_num: line number
  */
 void nop(stack_t **head, unsigned int line_num)
 {
@@ -9,6 +12,9 @@ void nop(stack_t **head, unsigned int line_num)
 }
 
 /**
+ * swap - function that swap the top 2 elements of the stack
+ * @head: head stack
+ * @line_num: line number
  */
 void swap(stack_t **head, unsigned int line_num)
 {
@@ -31,6 +37,9 @@ void swap(stack_t **head, unsigned int line_num)
 }
 
 /**
+ * add - funtion that add the top 2 elements of the stack
+ * @head: head stack
+ * @line_num: line number
  */
 void add(stack_t **head, unsigned int line_num)
 {

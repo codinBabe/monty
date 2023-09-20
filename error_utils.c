@@ -30,7 +30,7 @@ void o_err(char *file)
  * @file: file desciptor
  * @line: buffer
  * @head: head stack or queue
- * @line_number: line number of the command
+ * @line_num: line number of the command
  */
 
 void p_err(FILE *file, char *line, stack_t *head, int line_num)

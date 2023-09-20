@@ -1,6 +1,8 @@
 #include "monty.h"
 
 /**
+ * free_stack - function that free stack node
+ * @head: stack head
  */
 void free_stack(stack_t *head)
 {
@@ -14,6 +16,8 @@ void free_stack(stack_t *head)
 }
 
 /**
+ * close_stack - function that close and clean file
+ * @head: stack head
  */
 void close_stack(stack_t **head)
 {

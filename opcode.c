@@ -1,5 +1,11 @@
 #include "monty.h"
 /**
+ * get_opcode - function that get opcode
+ * @head: stack head
+ * @args:arguments
+ * @val:value to ge
+ * @line_num: line number
+ * Return: success or failure
  */
 int get_opcode(stack_t **head, char *args, char *val, int line_num)
 {
