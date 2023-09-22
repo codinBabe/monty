@@ -32,7 +32,7 @@ void exec_instr(char *arg)
 			rd = get_opcode(&head, token, val, c);
 			if (rd == 1)
 				p_err(montyCmd.file, montyCmd.line, head, c);
-			else if (rd == 1)
+			else if (rd == -1)
 				inst_err(montyCmd.file, montyCmd.line, head, token, c);
 		}
 		free(montyCmd.line);
